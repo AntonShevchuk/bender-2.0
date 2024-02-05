@@ -1,0 +1,9 @@
+{
+  "timeZone": "Europe/Kyiv",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "chat": {
+  }
+}
