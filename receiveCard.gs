@@ -2,25 +2,17 @@
  * @param {Object} event the event object from Google Chat
  */
 function receiveCard(event) {
-  const formHanler = new FormInputHandler(event)
 
-  if (!formHanler.isValidHandler()) {
-    console.log('Invalid event: formInputs not found.')
-    return
-  }
+  const parameters = event.common.parameters
 
-  let description = formHanler.getTextValue('description')
-
-  if (!description || description.trim() === '') {
-    return INVALID_ARGUMENT('You should write the description')
-  }
+  let description = parameters['description'] || ''
 
   let images = [
-    formHanler.getTextValue('image_1'),
-    formHanler.getTextValue('image_2'),
-    formHanler.getTextValue('image_3'),
-    formHanler.getTextValue('image_4'),
-    formHanler.getTextValue('image_5')
+    parameters['image_1'],
+    parameters['image_2'],
+    parameters['image_3'],
+    parameters['image_4'],
+    parameters['image_5'],
   ]
 
   images = images.filter(n => n)
@@ -32,7 +24,7 @@ function receiveCard(event) {
     widgets.push(widgetImage(images.shift()));
   }
 
-  // Create Grid for the remaining images
+  // Create the Grid for the remaining images
   if (images.length > 0) {
     let grid = new Grid('', 2)
 

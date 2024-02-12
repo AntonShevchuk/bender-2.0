@@ -16,6 +16,8 @@ function onMessage(event) {
         return slashWhisky(event)
       case 20:
         return slashCard(event)
+      case 21:
+        return slashNotes(event)
     }
   } else {
     // If the Chat app doesn't detect a slash command
@@ -38,10 +40,22 @@ function onMessage(event) {
  *
  * @param {Object} event the event object from Google Chat
  */
-function onCardClick (event) {
+function onCardClick(event) {
   switch (event.common.invokedFunction) {
+    // - /card
+    case 'slashCard':
+      return slashCard(event)
+    case 'openCard':
+      return openCard(event)
     case 'receiveCard':
       return receiveCard(event)
+    // - /notes
+    case 'slashNotes':
+      return slashNotes(event)
+    case 'openNotes':
+      return openNotes(event)
+    case 'receiveNotes':
+      return receiveNotes(event)
   }
 }
 

@@ -6,6 +6,9 @@
  * @return {object} open a Dialog in Google Chat.
  */
 function slashCard (event) {
+
+  const parameters = event.common.parameters
+
   return {
     'action_response': {
       'type': RESPONSE_TYPE_DIALOG,
@@ -14,7 +17,7 @@ function slashCard (event) {
           'body': {
             'sections': [
               {
-                'header': 'Nice Card Builder',
+                'header': 'Card Builder',
                 'collapsible': true,
                 'uncollapsibleWidgetsCount': 2,
                 'widgets': [
@@ -22,38 +25,44 @@ function slashCard (event) {
                     'textInput': {
                       'name': 'description',
                       'type': 'MULTIPLE_LINE',
-                      'label': '📝 Description'
+                      'label': '📝 Description',
+                      'value': parameters ? (htmlEntities(parameters['description']) || '') : ''
                     }
                   },
                   {
                     'textInput': {
                       'name': 'image_1',
                       'label': '1️⃣ Image URL',
+                      'value': parameters ? (parameters['image_1'] || '') : '',
                       'placeholderText': 'https://source.unsplash.com/featured/320x320'
                     }
                   },
                   {
                     'textInput': {
                       'name': 'image_2',
-                      'label': '2️⃣'
+                      'label': '2️⃣',
+                      'value': parameters ? (parameters['image_2'] || '') : ''
                     }
                   },
                   {
                     'textInput': {
                       'name': 'image_3',
-                      'label': '3️⃣'
+                      'label': '3️⃣',
+                      'value': parameters ? (parameters['image_3'] || '') : ''
                     }
                   },
                   {
                     'textInput': {
                       'name': 'image_4',
-                      'label': '4️⃣'
+                      'label': '4️⃣',
+                      'value': parameters ? (parameters['image_4'] || '') : ''
                     }
                   },
                   {
                     'textInput': {
                       'name': 'image_5',
-                      'label': '5️⃣'
+                      'label': '5️⃣',
+                      'value': parameters ? (parameters['image_5'] || '') : ''
                     }
                   }
                 ]
@@ -66,16 +75,10 @@ function slashCard (event) {
                     'name': 'send'
                   }
                 },
-                'text': 'Send',
-                'color': {
-                  'red': 0,
-                  'green': 0.5,
-                  'blue': 1,
-                  'alpha': 1
-                },
+                'text': 'Preview',
                 'onClick': {
                   'action': {
-                    'function': 'receiveCard'
+                    'function': 'openCard'
                   }
                 }
               }

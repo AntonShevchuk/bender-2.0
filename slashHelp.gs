@@ -8,6 +8,8 @@ function slashHelp (event) {
       '*/help* — Ask for assistance',
       '*/bender* — Seek my opinion',
       '*/whisky* — It\'s time for a 🥃',
+      '*/card* — Open Card Builder',
+      '*/notes* — Prepare meeting notes for the current space',
     ].join('\n\n')
   }
 }

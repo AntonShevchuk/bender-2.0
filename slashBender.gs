@@ -28,7 +28,7 @@ function slashBender (event) {
               'widgets': [
                 {
                   'textParagraph': {
-                    'text': `— ${messages[random]}`
+                    'text': '— ' + messages[random]
                   }
                 }
               ]

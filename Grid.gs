@@ -15,7 +15,7 @@ class Grid {
 
   /**
    * Creates a grid item for inclusion in a grid widget.
-   * @param {String} imageUrl URL of the image.
+   * @param {String} url URL of the image.
    * @param {String} altText Alternative text for the image (for accessibility).
    * @param {String} cropStyle Crop style of the image, can be SQUARE, CIRCLE, or RECTANGLE_4_3.
    * @param {String} title Title text for the grid item.
