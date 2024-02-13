@@ -5,7 +5,7 @@ function receiveCard(event) {
 
   const parameters = event.common.parameters
 
-  let description = parameters['description'] || ''
+  let description = parameters['description']
 
   let images = [
     parameters['image_1'],
@@ -46,7 +46,7 @@ function receiveCard(event) {
     },
     'cardsV2': [
       {
-        'cardId': 'niceCard',
+        'cardId': 'card',
         'card': {
           'sections': [
             {

@@ -3,6 +3,13 @@
  */
 function slashBender (event) {
 
+  if (event.message.argumentText && event.message.argumentText.length) {
+    switch (event.message.argumentText.trim()) {
+      case 'stats':
+        return slashBenderStats(event)
+    }
+  }
+
   const messages = [
     'I\'m Bender, baby!',
     'Wanna kill all humans?',

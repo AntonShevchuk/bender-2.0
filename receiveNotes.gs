@@ -4,9 +4,9 @@
 function receiveNotes(event) {
   const parameters = event.common.parameters
 
-  let announcements = parameters['announcements'] || ''
-  let notes = parameters['notes'] || 'notes'
-  let actions = parameters['actions'] || 'actions'
+  let announcements = parameters['announcements']
+  let notes = parameters['notes']
+  let actions = parameters['actions']
 
   let widgets = []
 
@@ -14,7 +14,7 @@ function receiveNotes(event) {
     widgets.push(
       {
         'header': '📢 Announcements',
-        'widgets': announcements
+        'widgets': prepareTextWidgets(announcements)
       }
     )
   }
@@ -23,7 +23,7 @@ function receiveNotes(event) {
     widgets.push(
       {
         'header': '📝 Notes',
-        'widgets': notes
+        'widgets': prepareTextWidgets(notes)
       }
     )
   }
@@ -32,7 +32,7 @@ function receiveNotes(event) {
     widgets.push(
       {
         'header': '✅ Action Items',
-        'widgets': actions
+        'widgets': prepareTextWidgets(actions)
       }
     )
   }
@@ -43,7 +43,7 @@ function receiveNotes(event) {
     },
     'cardsV2': [
       {
-        'cardId': 'mm',
+        'cardId': 'notes',
         'card': {
           'header': {
             'title': '📆 ' + new Date().toISOString().substring(0, 10),

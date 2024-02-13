@@ -4,6 +4,9 @@
  * @param {Object} event the event object from Google Chat
  */
 function onMessage(event) {
+
+  collectStatisticData(event)
+
   if (event.message.slashCommand) {
     // Checks for the presence of event.message.slashCommand
     // The ID for your slash command
@@ -41,6 +44,9 @@ function onMessage(event) {
  * @param {Object} event the event object from Google Chat
  */
 function onCardClick(event) {
+
+  collectStatisticData(event)
+
   switch (event.common.invokedFunction) {
     // - /card
     case 'slashCard':
@@ -56,6 +62,10 @@ function onCardClick(event) {
       return openNotes(event)
     case 'receiveNotes':
       return receiveNotes(event)
+    case 'openNotesForward':
+      return openNotesForward(event)
+    case 'receiveNotesForward':
+      return receiveNotesForward(event)
   }
 }
 
@@ -65,6 +75,9 @@ function onCardClick(event) {
  * @param {Object} event the event object from Google Chat
  */
 function onAddToSpace(event) {
+
+  collectStatisticData(event)
+
   let message = ''
 
   if (event.space.singleUserBotDm) {
@@ -87,6 +100,9 @@ function onAddToSpace(event) {
  * @param {Object} event the event object from Google Chat
  */
 function onRemoveFromSpace(event) {
+
+  collectStatisticData(event)
+
   console.info("Bot removed from ",
     (event.space.name ? event.space.name : "this chat"));
 }

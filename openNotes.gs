@@ -8,7 +8,7 @@ function openNotes (event) {
   const notes = formHandler.getTextValue('notes')
   const actions = formHandler.getTextValue('actions')
 
-  if (!notes.length && !announcements.length && !actions.length) {
+  if (!announcements.length && !notes.length && !actions.length) {
     return INVALID_ARGUMENT('You don\'t write anything!')
   }
 
