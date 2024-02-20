@@ -47,26 +47,52 @@ function widgetDecoratedText(text, topLabel = '', bottomLabel = '') {
 
 /**
  * @link https://developers.google.com/chat/ui/widgets/columns
+ * @param {('FILL_AVAILABLE_SPACE'|'FILL_MINIMUM_SPACE')} firstSize
+ * @param {('START'|'CENTER'|'END')} firstHA
+ * @param {('TOP'|'CENTER'|'BOTTOM')} firstVA
+ * @param {('FILL_AVAILABLE_SPACE'|'FILL_MINIMUM_SPACE')} secondSize
+ * @param {('START'|'CENTER'|'END')} secondHA
+ * @param {('TOP'|'CENTER'|'BOTTOM')} secondVA
  */
-function widgetColumnsByObject(object) {
-  let widget = {
+function widgetColumns (firstSize = 'FILL_AVAILABLE_SPACE',
+  firstHA = 'CENTER',
+  firstVA = 'CENTER',
+  secondSize = 'FILL_AVAILABLE_SPACE',
+  secondHA = 'CENTER',
+  secondVA = 'CENTER') {
+  return {
     'columns': {
       'columnItems': [
         {
-          'horizontalSizeStyle': 'FILL_AVAILABLE_SPACE',
-          'horizontalAlignment': 'START',
-          'verticalAlignment': 'CENTER',
+          'horizontalSizeStyle': firstSize,
+          'horizontalAlignment': firstHA,
+          'verticalAlignment': firstVA,
           'widgets': []
         },
         {
-          'horizontalSizeStyle': 'FILL_MINIMUM_SPACE',
-          'horizontalAlignment': 'END',
-          'verticalAlignment': 'CENTER',
+          'horizontalSizeStyle': secondSize,
+          'horizontalAlignment': secondHA,
+          'verticalAlignment': secondVA,
           'widgets': []
         }
       ]
     }
   }
+}
+
+/**
+ * Fill columns widget with key-value data from an object
+ * @param object
+ */
+function widgetColumnsByObject(object) {
+  let widget = widgetColumns(
+    'FILL_AVAILABLE_SPACE',
+    'START',
+    'CENTER',
+    'FILL_MINIMUM_SPACE',
+    'END',
+    'CENTER'
+  )
 
   Object.keys(object).forEach((key) => {
     widget.columns.columnItems[0].widgets.push(widgetTextParagraph(key))
