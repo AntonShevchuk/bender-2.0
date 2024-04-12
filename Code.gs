@@ -21,6 +21,8 @@ function onMessage(event) {
         return slashCard(event)
       case 21:
         return slashNotes(event)
+      case 22:
+        return slashPoll(event)
     }
   } else {
     // If the Chat app doesn't detect a slash command
@@ -66,6 +68,11 @@ function onCardClick(event) {
       return openNotesForward(event)
     case 'receiveNotesForward':
       return receiveNotesForward(event)
+    // - /poll
+    case 'receivePoll':
+      return receivePoll(event)
+    case 'votePoll':
+      return votePoll(event)
   }
 }
 
@@ -83,7 +90,7 @@ function onAddToSpace(event) {
   if (event.space.singleUserBotDm) {
     message = `I'm Bender, ${event.user.displayName}!`
   } else {
-    message = `I'm Bender, baby! This is mine space now!`
+    message = `I'm Bender, baby! This is my space now!`
   }
 
   if (event.message) {

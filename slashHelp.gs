@@ -10,6 +10,7 @@ function slashHelp (event) {
       '*/whisky* — It\'s time for a 🥃',
       '*/card* — Open Card Builder',
       '*/notes* — Prepare meeting notes for the current space',
+      '*/poll* - Create vote/poll'
     ].join('\n\n')
   }
 }

@@ -10,6 +10,7 @@ const CODE_OK = 'OK'
 // INVALID_ARGUMENT indicates arguments that are problematic regardless of the state of the system (e.g., a malformed file name).
 // HTTP Mapping: 400 Bad Request
 const CODE_INVALID_ARGUMENT = 'INVALID_ARGUMENT'
+const CODE_ALREADY_EXISTS = 'ALREADY_EXISTS'
 
 /**
  * The type of Chat app response

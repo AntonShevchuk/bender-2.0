@@ -54,28 +54,12 @@ class FormInputHandler {
   }
 
   /**
-   * Retrieve a single selection value by field name
+   * Retrieve a boolean, based on present formInput element or not
    *
    * @param {String} fieldName of a stringInputs field
    */
-  getSingleSelectValue(fieldName) {
-    if (this.isValid && this.formInputs[fieldName] &&
-      this.formInputs[fieldName].singleSelectInput) {
-      return this.formInputs[fieldName].singleSelectInput.selectedOption.value;
-    }
-    return null;
-  }
-
-  /**
-   * Retrieve multiple selection values by field name
-   *
-   * @param {String} fieldName of a stringInputs field
-   */
-  getMultipleSelectValues(fieldName) {
-    if (this.isValid && this.formInputs[fieldName] && this.formInputs[fieldName].multipleSelectInput) {
-      return this.formInputs[fieldName].multipleSelectInput.selectedOptions.map(option => option.value);
-    }
-    return [];
+  getBooleanValue(fieldName) {
+    return !!(this.isValid && this.formInputs[fieldName]);
   }
 
   // Additional methods to handle other types of inputs can be added here
