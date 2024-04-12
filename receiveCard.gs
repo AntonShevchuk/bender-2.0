@@ -41,17 +41,17 @@ function receiveCard(event) {
   )
 
   return {
-    'actionResponse': {
-      'type': RESPONSE_TYPE_NEW_MESSAGE,
+    "actionResponse": {
+      "type": RESPONSE_TYPE_NEW_MESSAGE,
     },
-    'cardsV2': [
+    "cardsV2": [
       {
-        'cardId': 'card',
-        'card': {
-          'sections': [
+        "cardId": "card",
+        "card": {
+          "sections": [
             {
-              'collapsible': false,
-              'widgets': widgets
+              "collapsible": false,
+              "widgets": widgets
             }
           ]
         }

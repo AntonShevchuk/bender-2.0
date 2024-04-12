@@ -4,8 +4,8 @@
  */
 function widgetTextParagraph(text) {
   return {
-    'textParagraph': {
-      'text': `${text}`
+    "textParagraph": {
+      "text": `${text}`
     }
   }
 }
@@ -16,9 +16,9 @@ function widgetTextParagraph(text) {
  */
 function widgetImage(url, alt = '') {
   return {
-    'image': {
-      'imageUrl': url,
-      'altText': alt
+    "image": {
+      "imageUrl": url,
+      "altText": alt
     }
   }
 }
@@ -54,26 +54,26 @@ function widgetDecoratedText(text, topLabel = '', bottomLabel = '') {
  * @param {('START'|'CENTER'|'END')} secondHA
  * @param {('TOP'|'CENTER'|'BOTTOM')} secondVA
  */
-function widgetColumns (firstSize = 'FILL_AVAILABLE_SPACE',
-  firstHA = 'CENTER',
-  firstVA = 'CENTER',
-  secondSize = 'FILL_AVAILABLE_SPACE',
-  secondHA = 'CENTER',
-  secondVA = 'CENTER') {
+function widgetColumns (firstSize = "FILL_AVAILABLE_SPACE",
+  firstHA = "CENTER",
+  firstVA = "CENTER",
+  secondSize = "FILL_AVAILABLE_SPACE",
+  secondHA = "CENTER",
+  secondVA = "CENTER") {
   return {
-    'columns': {
-      'columnItems': [
+    "columns": {
+      "columnItems": [
         {
-          'horizontalSizeStyle': firstSize,
-          'horizontalAlignment': firstHA,
-          'verticalAlignment': firstVA,
-          'widgets': []
+          "horizontalSizeStyle": firstSize,
+          "horizontalAlignment": firstHA,
+          "verticalAlignment": firstVA,
+          "widgets": []
         },
         {
-          'horizontalSizeStyle': secondSize,
-          'horizontalAlignment': secondHA,
-          'verticalAlignment': secondVA,
-          'widgets': []
+          "horizontalSizeStyle": secondSize,
+          "horizontalAlignment": secondHA,
+          "verticalAlignment": secondVA,
+          "widgets": []
         }
       ]
     }

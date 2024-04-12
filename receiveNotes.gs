@@ -38,20 +38,20 @@ function receiveNotes(event) {
   }
 
   return {
-    'actionResponse': {
-      'type': 'NEW_MESSAGE',
+    "actionResponse": {
+      "type": "NEW_MESSAGE",
     },
-    'cardsV2': [
+    "cardsV2": [
       {
-        'cardId': 'notes',
-        'card': {
-          'header': {
-            'title': '📆 ' + new Date().toISOString().substring(0, 10),
-            'subtitle': 'Meeting Minutes',
-            'imageUrl': 'https://drive.google.com/uc?id=11EEyaDyInz-fnz2seJr8grqoUL8zBFIg',
-            'imageType': 'CIRCLE'
+        "cardId": "notes",
+        "card": {
+          "header": {
+            "title": `📆 ${new Date().toISOString().substring(0, 10)}`,
+            "subtitle": "Meeting Minutes",
+            "imageUrl": "https://drive.google.com/uc?id=11EEyaDyInz-fnz2seJr8grqoUL8zBFIg",
+            "imageType": "CIRCLE"
           },
-          'sections': widgets
+          "sections": widgets
         }
       }
     ]

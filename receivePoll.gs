@@ -22,7 +22,7 @@ function receivePoll(event) {
     return slashPoll(event, data)
   }
 
-  if (!data.options.length) {
+  if (data.options.length < 2) {
     return slashPoll(event, data)
   }
 

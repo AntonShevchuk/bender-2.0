@@ -37,12 +37,12 @@ const RESPONSE_TYPE_UPDATE_WIDGET = 'UPDATE_WIDGET'
 
 function actionResponse(type = RESPONSE_TYPE_DIALOG, statusCode = CODE_OK, message = '') {
   return {
-    'actionResponse': {
-      'type': type,
-      'dialogAction': {
-        'actionStatus': {
-          'statusCode': statusCode,
-          'userFacingMessage': message
+    "actionResponse": {
+      "type": type,
+      "dialogAction": {
+        "actionStatus": {
+          "statusCode": statusCode,
+          "userFacingMessage": message
         }
       }
     }

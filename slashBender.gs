@@ -25,17 +25,17 @@ function slashBender (event) {
   const random = Math.floor(Math.random() * (messages.length - 1))
 
   return {
-    'cardsV2': [{
-      'cardId': 'bender',
-      'card':
+    "cardsV2": [{
+      "cardId": "bender",
+      "card":
         {
-          'sections': [
+          "sections": [
             {
-              'collapsible': false,
-              'widgets': [
+              "collapsible": false,
+              "widgets": [
                 {
-                  'textParagraph': {
-                    'text': '— ' + messages[random]
+                  "textParagraph": {
+                    "text": `— ${messages[random]}`
                   }
                 }
               ]
