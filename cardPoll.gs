@@ -1,3 +1,9 @@
+/**
+ * @param {Object} event the event object from Google Chat
+ * @param {Object} data the data from the request
+ *
+ * @return {Object} the card object
+ */
 function cardPoll(event, data) {
   let card = {
     'actionResponse': {
