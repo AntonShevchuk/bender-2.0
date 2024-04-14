@@ -1,13 +1,15 @@
 /**
+ * Create a card for Google Chat.
+ *
  * @param {Object} event the event object from Google Chat
- * @param {Object} data the data from the request
+ * @param {Object} request the data from the request
  *
  * @return {Object} the card object
  */
-function cardPoll(event, data) {
+function cardPoll(event, request) {
   let card = {
-    'actionResponse': {
-      'type': 'NEW_MESSAGE',
+    "actionResponse": {
+      "type": RESPONSE_TYPE_NEW_MESSAGE,
     },
     "cardsV2": [
       {
@@ -27,19 +29,20 @@ function cardPoll(event, data) {
 
   let sections = [];
 
+  // the widget with question and icon
   sections.push({
     "widgets": [
       {
         "decoratedText": {
           /*"startIcon": {
             "materialIcon": {
-              "name": data.anonymous ? "lock" : "public"
+              "name": request.anonymous ? "lock" : "public"
             }
           },*/
-          "text": data.question,
+          "text": request.question,
           "endIcon": {
             "materialIcon": {
-              "name": data.multi ? "checklist_rtl" : "rule"
+              "name": request.multi ? "checklist_rtl" : "rule"
             }
           }
         }
@@ -47,7 +50,8 @@ function cardPoll(event, data) {
     ]
   })
 
-  for (let i = 0; i < data.options.length; i++) {
+  // prepare widgets for every option
+  for (let i = 0; i < request.options.length; i++) {
     sections.push({
       "collapsible": true,
       "uncollapsibleWidgetsCount": 1,
@@ -59,7 +63,7 @@ function cardPoll(event, data) {
                 "name": "arrow_right"
               }
             },
-            "topLabel": data.options[i],
+            "topLabel": request.options[i],
             "text": "⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️",
             "bottomLabel": "0%",
             "button": {
@@ -72,11 +76,11 @@ function cardPoll(event, data) {
               "altText": "Vote",
               "onClick": {
                 "action": {
-                  "function": "votePoll",
+                  "function": "actionVotePoll",
                   "parameters": [
                     {
                       "key": "option",
-                      "value": `${i+1}`
+                      "value": `${i + 1}`
                     }
                   ]
                 }

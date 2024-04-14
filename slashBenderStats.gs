@@ -8,18 +8,18 @@ function slashBenderStats(event) {
 
   let widgets = [
     widgetDivider(),
-    widgetDecoratedText('<b>Scripts statistics</b>'),
-    widgetDecoratedText('Events'),
+    widgetDecoratedText("<b>Scripts statistics</b>"),
+    widgetDecoratedText("Events"),
     widgetColumnsByObject(scriptStats.events),
-    widgetDecoratedText('Commands'),
+    widgetDecoratedText("Commands"),
     widgetColumnsByObject(scriptStats.commands),
-    widgetDecoratedText('Functions'),
+    widgetDecoratedText("Functions"),
     widgetColumnsByObject(scriptStats.functions),
     widgetDivider(),
-    widgetDecoratedText('<b>User statistics</b>'),
-    widgetDecoratedText('Commands'),
+    widgetDecoratedText("<b>User statistics</b>"),
+    widgetDecoratedText("Commands"),
     widgetColumnsByObject(userStats.commands),
-    widgetDecoratedText('Functions'),
+    widgetDecoratedText("Functions"),
     widgetColumnsByObject(userStats.functions),
   ]
 

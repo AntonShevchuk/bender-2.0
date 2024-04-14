@@ -14,7 +14,7 @@ function widgetTextParagraph(text) {
  * @link https://developers.google.com/chat/ui/widgets/image
  * @link https://developers.google.com/chat/api/reference/rest/v1/cards#image
  */
-function widgetImage(url, alt = '') {
+function widgetImage(url, alt = "") {
   return {
     "image": {
       "imageUrl": url,
@@ -35,7 +35,7 @@ function widgetDivider() {
 /**
  * @link https://developers.google.com/chat/ui/widgets/decorated-text
  */
-function widgetDecoratedText(text, topLabel = '', bottomLabel = '') {
+function widgetDecoratedText(text, topLabel = "", bottomLabel = "") {
   return {
     "decoratedText": {
       "topLabel": `${topLabel}`,
@@ -47,14 +47,14 @@ function widgetDecoratedText(text, topLabel = '', bottomLabel = '') {
 
 /**
  * @link https://developers.google.com/chat/ui/widgets/columns
- * @param {('FILL_AVAILABLE_SPACE'|'FILL_MINIMUM_SPACE')} firstSize
- * @param {('START'|'CENTER'|'END')} firstHA
- * @param {('TOP'|'CENTER'|'BOTTOM')} firstVA
- * @param {('FILL_AVAILABLE_SPACE'|'FILL_MINIMUM_SPACE')} secondSize
- * @param {('START'|'CENTER'|'END')} secondHA
- * @param {('TOP'|'CENTER'|'BOTTOM')} secondVA
+ * @param {("FILL_AVAILABLE_SPACE"|"FILL_MINIMUM_SPACE")} firstSize
+ * @param {("START"|"CENTER"|"END")} firstHA
+ * @param {("TOP"|"CENTER"|"BOTTOM")} firstVA
+ * @param {("FILL_AVAILABLE_SPACE"|"FILL_MINIMUM_SPACE")} secondSize
+ * @param {("START"|"CENTER"|"END")} secondHA
+ * @param {("TOP"|"CENTER"|"BOTTOM")} secondVA
  */
-function widgetColumns (firstSize = "FILL_AVAILABLE_SPACE",
+function widgetColumns(firstSize = "FILL_AVAILABLE_SPACE",
   firstHA = "CENTER",
   firstVA = "CENTER",
   secondSize = "FILL_AVAILABLE_SPACE",
@@ -86,12 +86,12 @@ function widgetColumns (firstSize = "FILL_AVAILABLE_SPACE",
  */
 function widgetColumnsByObject(object) {
   let widget = widgetColumns(
-    'FILL_AVAILABLE_SPACE',
-    'START',
-    'CENTER',
-    'FILL_MINIMUM_SPACE',
-    'END',
-    'CENTER'
+    "FILL_AVAILABLE_SPACE",
+    "START",
+    "CENTER",
+    "FILL_MINIMUM_SPACE",
+    "END",
+    "CENTER"
   )
 
   Object.keys(object).forEach((key) => {

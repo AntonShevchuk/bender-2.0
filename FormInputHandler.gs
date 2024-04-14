@@ -59,7 +59,7 @@ class FormInputHandler {
    * @param {String} fieldName of a stringInputs field
    */
   getBooleanValue(fieldName) {
-    return !!(this.isValid && this.formInputs[fieldName]);
+    return (this.isValid && this.formInputs[fieldName]) ? true : false;
   }
 
   // Additional methods to handle other types of inputs can be added here

@@ -1,7 +1,7 @@
 /**
  * Just help
  */
-function slashHelp (event) {
+function slashHelp(event) {
   return {
     "privateMessageViewer": event.user,
     "text": [

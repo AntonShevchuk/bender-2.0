@@ -1,11 +1,13 @@
 /**
  * @param {Object} event the event object from Google Chat
  */
-function votePoll(event) {
+function actionVotePoll(event) {
 
   let parameters = event.common.parameters
 
   let sections = event.message.cardsV2[0].card.sections
+
+  // let anonymous = sections[0].widgets[0].decoratedText.startIcon.materialIcon.name === "lock"
 
   let multi = sections[0].widgets[0].decoratedText.endIcon.materialIcon.name === "checklist_rtl"
 
@@ -86,7 +88,7 @@ function votePoll(event) {
 
   return {
     "actionResponse": {
-      "type": "UPDATE_MESSAGE",
+      "type": RESPONSE_TYPE_UPDATE_MESSAGE,
     },
     "cardsV2": [
       {
@@ -111,20 +113,22 @@ function calculatePercentages(data) {
   let totalItems = flattenedArray.length
 
   // Filter out duplicates by using a temporary object where properties represent the unique items found so far
-  let uniqueItems = flattenedArray.filter(function(item, index, self) {
+  let uniqueItems = flattenedArray.filter(function (item, index, self) {
     return self.indexOf(item) === index;
   });
 
   let totalUniqueItems = uniqueItems.length;
 
-  // Calculate the percentage of each subarray based on the total items
-  return data.map(function (sublist) {
+  // Calculate percentage of each sub-array based on the total items
+  let percentages = data.map(function (sublist) {
     return totalUniqueItems ? Math.round(sublist.length / totalUniqueItems * 100) : 0;
   });
+
+  return percentages;
 }
 
 /**
- * @param {Number} percentage
+ * @param {Integer} percentage
  */
 function fillProgressBar(percentage) {
   let totalBoxes = 10; // Total number of boxes in the text

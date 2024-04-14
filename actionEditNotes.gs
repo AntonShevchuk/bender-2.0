@@ -5,7 +5,9 @@
  *
  * @return {object} open a Dialog in Google Chat.
  */
-function slashPoll(event) {
-  // nothing for now
-  return dialogPoll(event)
+function actionEditNotes(event) {
+
+  const parameters = event.common.parameters
+
+  return dialogNotes(event, parameters)
 }

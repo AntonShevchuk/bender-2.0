@@ -1,12 +1,13 @@
 /**
  * @param {Object} event the event object from Google Chat
  */
-function receivePoll(event) {
+function actionNewPoll(event) {
 
   const formHandler = new FormInputHandler(event)
 
-  let data = {
+  let request = {
     question: formHandler.getTextValue('question'),
+    // anonymous: formHandler.getBooleanValue('anonymous'),
     multi: formHandler.getBooleanValue('multi'),
     options: []
   }
@@ -14,17 +15,17 @@ function receivePoll(event) {
   for (let i = 1; i <= 10; i++) {
     let option = formHandler.getTextValue(`option${i}`)
     if (option.length) {
-      data.options.push(option)
+      request.options.push(option)
     }
   }
 
-  if (!data.question.length) {
-    return slashPoll(event, data)
+  if (!request.question.length) {
+    return dialogPoll(event, request)
   }
 
-  if (data.options.length < 2) {
-    return slashPoll(event, data)
+  if (request.options.length < 2) {
+    return dialogPoll(event, request)
   }
 
-  return cardPoll(event, data)
+  return cardPoll(event, request)
 }

@@ -1,18 +1,18 @@
 /**
  * @param {Object} event the event object from Google Chat
  */
-function receiveCard(event) {
+function actionNewCard(event) {
 
   const parameters = event.common.parameters
 
-  let description = parameters['description']
+  let description = parameters["description"]
 
   let images = [
-    parameters['image_1'],
-    parameters['image_2'],
-    parameters['image_3'],
-    parameters['image_4'],
-    parameters['image_5'],
+    parameters["image_1"],
+    parameters["image_2"],
+    parameters["image_3"],
+    parameters["image_4"],
+    parameters["image_5"],
   ]
 
   images = images.filter(n => n)
@@ -26,11 +26,11 @@ function receiveCard(event) {
 
   // Create the Grid for the remaining images
   if (images.length > 0) {
-    let grid = new Grid('', 2)
+    let grid = new Grid("", 2)
 
     // For each image, add a grid item to the Grid instance
     for (let i = 0; i < images.length; i++) {
-      grid.addGridItem(images[i], '', 'SQUARE', '', '');
+      grid.addGridItem(images[i], "", "SQUARE", "", "");
     }
 
     widgets.push(grid.build());

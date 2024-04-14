@@ -51,28 +51,24 @@ function onCardClick(event) {
 
   switch (event.common.invokedFunction) {
     // - /card
-    case 'slashCard':
-      return slashCard(event)
-    case 'openCard':
-      return openCard(event)
-    case 'receiveCard':
-      return receiveCard(event)
+    case 'actionEditCard':
+      return actionEditCard(event)
+    case 'actionPreviewCard':
+      return actionPreviewCard(event)
+    case 'actionNewCard':
+      return actionNewCard(event)
     // - /notes
-    case 'slashNotes':
-      return slashNotes(event)
-    case 'openNotes':
-      return openNotes(event)
-    case 'receiveNotes':
-      return receiveNotes(event)
-    case 'openNotesForward':
-      return openNotesForward(event)
-    case 'receiveNotesForward':
-      return receiveNotesForward(event)
+    case 'actionEditNotes':
+      return actionEditNotes(event)
+    case 'actionPreviewNotes':
+      return actionPreviewNotes(event)
+    case 'actionNewNotes':
+      return actionNewNotes(event)
     // - /poll
-    case 'receivePoll':
-      return receivePoll(event)
-    case 'votePoll':
-      return votePoll(event)
+    case 'actionNewPoll.gs':
+      return actionNewPoll(event)
+    case 'actionVotePoll':
+      return actionVotePoll(event)
   }
 }
 

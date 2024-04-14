@@ -37,12 +37,12 @@ const RESPONSE_TYPE_UPDATE_WIDGET = 'UPDATE_WIDGET'
 
 function actionResponse(type = RESPONSE_TYPE_DIALOG, statusCode = CODE_OK, message = '') {
   return {
-    "actionResponse": {
-      "type": type,
-      "dialogAction": {
-        "actionStatus": {
-          "statusCode": statusCode,
-          "userFacingMessage": message
+    'actionResponse': {
+      'type': type,
+      'dialogAction': {
+        'actionStatus': {
+          'statusCode': statusCode,
+          'userFacingMessage': message
         }
       }
     }
@@ -53,7 +53,7 @@ function actionResponse(type = RESPONSE_TYPE_DIALOG, statusCode = CODE_OK, messa
  * Card Helper
  *  - When all OK, status code
  */
-function OK () {
+function OK() {
   return actionResponse(RESPONSE_TYPE_DIALOG, CODE_OK, '👌')
 }
 
@@ -61,6 +61,6 @@ function OK () {
  * Card Helper
  *  - When argument is invalid
  */
-function INVALID_ARGUMENT (message) {
+function INVALID_ARGUMENT(message) {
   return actionResponse(RESPONSE_TYPE_DIALOG, CODE_INVALID_ARGUMENT, message)
 }

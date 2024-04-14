@@ -1,7 +1,7 @@
 /**
  * @param {Object} event the event object from Google Chat
  */
-function slashWhisky (event) {
+function slashWhisky(event) {
   return {
     "cardsV2": [{
       "cardId": "whisky",
