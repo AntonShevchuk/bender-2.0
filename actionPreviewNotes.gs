@@ -15,7 +15,7 @@ function actionPreviewNotes(event) {
       {
         "header": "⚠️ Attention ⚠️",
         "widgets": [
-          widgetTextParagraph("<b><font color='#ff0000'>You don't write anything!</font></b>")
+          widgetTextParagraph("<b>You don't write anything!</b>")
         ]
       }
     )

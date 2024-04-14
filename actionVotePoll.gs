@@ -120,15 +120,13 @@ function calculatePercentages(data) {
   let totalUniqueItems = uniqueItems.length;
 
   // Calculate percentage of each sub-array based on the total items
-  let percentages = data.map(function (sublist) {
+  return data.map(function (sublist) {
     return totalUniqueItems ? Math.round(sublist.length / totalUniqueItems * 100) : 0;
   });
-
-  return percentages;
 }
 
 /**
- * @param {Integer} percentage
+ * @param {Number} percentage
  */
 function fillProgressBar(percentage) {
   let totalBoxes = 10; // Total number of boxes in the text
