@@ -26,7 +26,7 @@ function onMessage(event) {
     }
   } else {
     // If the Chat app doesn't detect a slash command
-    let name = ''
+    let name
 
     if (event.space.type === 'DM') {
       name = 'You'
@@ -81,7 +81,7 @@ function onAddToSpace(event) {
 
   collectStatisticData(event)
 
-  let message = ''
+  let message
 
   if (event.space.singleUserBotDm) {
     message = `I'm Bender, ${event.user.displayName}!`
