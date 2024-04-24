@@ -14,17 +14,11 @@ function cardIssue(event, issue) {
 
   Logger.log(`The URL to Issue is ${jiraIssueUrl}`)
 
-  return {
+  let card = {
     "cardsV2": [
       {
         "cardId": "presale-request",
         "card": {
-          "header": {
-            "title": event.user.displayName,
-            "subtitle": event.user.email,
-            "imageUrl": event.user.avatarUrl,
-            "imageType": "CIRCLE"
-          },
           "sections": [
             {
               "widgets": [
@@ -114,22 +108,37 @@ function cardIssue(event, issue) {
                   }
                 }
               ]
-            },
-            {
-              "widgets": [
-                {
-                  "decoratedText": {
-                    "icon": {
-                      "knownIcon": "CLOCK"
-                    },
-                    "text": new Date().toLocaleString(),
-                  }
-                }
-              ]
-            },
+            }
           ]
         }
       }
     ]
   }
+
+  // we have the event if a user works with chat
+  if (event) {
+    card.cardsV2[0].card["header"] = {
+      "title": event.user.displayName,
+      "subtitle": event.user.email,
+      "imageUrl": event.user.avatarUrl,
+      "imageType": "CIRCLE"
+    }
+
+    card.cardsV2[0].card["sections"].push(
+      {
+        "widgets": [
+          {
+            "decoratedText": {
+              "icon": {
+                "knownIcon": "CLOCK"
+              },
+              "text": new Date().toLocaleString(),
+            }
+          }
+        ]
+      }
+    )
+  }
+
+  return card
 }

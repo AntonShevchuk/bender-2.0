@@ -7,7 +7,8 @@ The Bender bot for Google Workspace
 * [Create a Dialog][3] ([🇺🇦][4])
 * [Sequential Dialogs][5] ([🇺🇦][6])
 * [Properties Usage][7] ([🇺🇦][8])
-* Cards manipulation (🇺🇦)
+* [Cards manipulation][9] ([🇺🇦][10])
+* JIRA Integration
 
 [1]: https://medium.com/@AntonShevchuk/google-chat-bot-first-steps-d051bc67d6b9
 [2]: https://anton.shevchuk.name/google/google-chat-bot-first-steps/
@@ -20,3 +21,6 @@ The Bender bot for Google Workspace
 
 [7]: https://medium.com/@AntonShevchuk/google-chat-bot-properties-f9eae0d2e277
 [8]: https://anton.shevchuk.name/google/google-chat-bot-properties/
+
+[9]: https://medium.com/@AntonShevchuk/google-chat-bot-interaction-and-card-updates-e2d5dc995f78
+[10]: https://anton.shevchuk.name/google/google-chat-bot-interactions-and-card-updates/
