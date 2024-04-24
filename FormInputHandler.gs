@@ -1,3 +1,6 @@
+/**
+ * Handle the input data
+ */
 class FormInputHandler {
   /**
    * @param {Object} event the event object from Chat API.
@@ -10,7 +13,7 @@ class FormInputHandler {
     } else {
       // Handle the invalid case
       this.isValid = false;
-      console.log('Invalid event: formInputs not found.');
+      Logger.log('Invalid event: formInputs not found.');
       // Depending on your application, you might throw an error or handle this case differently
     }
   }
