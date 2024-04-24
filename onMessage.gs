@@ -30,7 +30,7 @@ function onMessage(event) {
     }
   } else {
     // If the Chat app doesn't detect a slash command
-    let name = ''
+    let name
 
     if (event.space.type === 'DM') {
       name = 'You'
