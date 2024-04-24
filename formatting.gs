@@ -48,5 +48,5 @@ function jiraToGoogleChat(text) {
     .replace(/{color:#([0-9A-F]{6})}(.*?){color}/gi, "<font color=\"#$1\">$2</font>") // font color
     .replace(/{color:red}(.*?){color}/gi, "<font color=\"#FF0000\">$1</font>")
     .replace(/{color:([a-z]+)}(.*?){color}/gi, "$2")
-    .replace(/\[(.*)\|(.+)\]/g, "<a href=\"$2\">$1</a>") // hyperlink
+    .replace(/\[(.*?)\|(.+?)]/g, "<a href=\"$2\">$1</a>") // hyperlink
 }
