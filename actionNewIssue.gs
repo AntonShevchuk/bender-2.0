@@ -19,11 +19,9 @@ function actionNewIssue(event) {
 
   const jiraApi = new JiraAPI()
 
-  const scriptProperties = PropertiesService.getScriptProperties();
-
   let issueData = {
     "fields": {
-      "project": { "key": scriptProperties.getProperty('JIRA_PROJECT') },
+      "project": { "key": jiraApi.project },
       "summary": summary,
       "description": googleChatToJira(description),
       "issuetype": { "name": type },
@@ -48,15 +46,14 @@ function actionNewIssue(event) {
       event.space.name,
       {},
       // Authenticate with the service account token.
-      {'Authorization': 'Bearer ' + serviceToken}
+      {'Authorization': `Bearer ${serviceToken}`}
     );
 
     // Extracting the thread name from the response
     // Assuming Id is spaces/AAAAUxdK75Q/threads/2HM5vNXagUo
     const [ , spaceId, , threadAndMessageId] = message.thread.name.split('/');
     const baseUrl = "https://chat.google.com/room/";
-    const clsParam = "10"; // The purpose of `cls` parameter is unclear. It might be optional or specific to UI behavior.
-    const threadUrl = `${baseUrl}${spaceId}/${threadAndMessageId}/${threadAndMessageId}?cls=${clsParam}`;
+    const threadUrl = `${baseUrl}${spaceId}/${threadAndMessageId}/${threadAndMessageId}`;
 
     Logger.log(`New thread ${threadUrl}`)
 
@@ -64,7 +61,7 @@ function actionNewIssue(event) {
       "fields": {}
     }
 
-    updateData.fields[scriptProperties.getProperty('JIRA_CUSTOM_FIELD')] = threadUrl
+    updateData.fields[jiraApi.customField] = threadUrl
 
     jiraApi.updateIssue(response.key, updateData)
   } catch (err) {

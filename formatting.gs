@@ -43,10 +43,12 @@ function jiraToGoogleChat(text) {
     .replace(/{_}(.*?){_}/g, "<i>$1</i>")
     .replace(/\+(.*?)\+/g, "<u>$1</u>") // underline
     .replace(/{\+}(.*?){\+}/g, "<u>$1</u>")
-    .replace(/-(.*?)-/g, "<s>$1</s>") // strikethrough
+    .replace(/-[a-zA-Z]+-/g, "<s>$1</s>") // strikethrough
     .replace(/{-}(.*?){-}/g, "<s>$1</s>")
     .replace(/{color:#([0-9A-F]{6})}(.*?){color}/gi, "<font color=\"#$1\">$2</font>") // font color
     .replace(/{color:red}(.*?){color}/gi, "<font color=\"#FF0000\">$1</font>")
     .replace(/{color:([a-z]+)}(.*?){color}/gi, "$2")
     .replace(/\[(.*?)\|(.+?)]/g, "<a href=\"$2\">$1</a>") // hyperlink
+    .replace(/\[(.*?)]/g, "<a href=\"$1\">$1</a>")
+    .replace(/\[~(.*?)]/g, "$1")
 }

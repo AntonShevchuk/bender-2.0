@@ -17,14 +17,20 @@ function hookCommented(spaceId, threadId, issue) {
 
   Logger.log(comment)
 
-  let widget = {
+  let decoratedText = {
     "decoratedText": {
       "icon": {
         "knownIcon": "PERSON"
+        // "iconUrl": comment.author.avatarUrls["48x48"]
       },
-      "topLabel": comment.author.displayName,
-      "text": comment.body,
+      "text": comment.author.displayName,
       "bottomLabel": comment.author.name,
+    }
+  }
+
+  let textParagraph = {
+    "textParagraph": {
+      "text": comment.body
     }
   }
 
@@ -34,14 +40,11 @@ function hookCommented(spaceId, threadId, issue) {
         "cardId": "commented",
         "card": {
           "sections": [{
-            "widgets": [widget]
+            "widgets": [decoratedText, textParagraph]
           }]
         }
       }
-    ],
-    "thread": {
-      "name": thread
-    }
+    ]
   }
 
   const serviceToken = getServiceAccessToken('messages', ['https://www.googleapis.com/auth/chat.messages']);
