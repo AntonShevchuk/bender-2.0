@@ -44,7 +44,10 @@ function hookCommented(spaceId, threadId, issue) {
           }]
         }
       }
-    ]
+    ],
+    "thread": {
+      "name": thread
+    }
   }
 
   const serviceToken = getServiceAccessToken('messages', ['https://www.googleapis.com/auth/chat.messages']);
