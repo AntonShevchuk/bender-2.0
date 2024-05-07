@@ -106,11 +106,11 @@ function actionVotePoll(event) {
  * @param {Array} data
  */
 function calculatePercentages(data) {
-  // Flatten the array by concatenating all subarrays
+  // Flatten the array by concatenating all sub-arrays
   let flattenedArray = [].concat.apply([], data);
 
-  // Calculate the total number of items across all subarrays
-  // let totalItems = flattenedArray.length
+  // Calculate total number of items across all sub-arrays
+  let totalItems = flattenedArray.length
 
   // Filter out duplicates by using a temporary object where properties represent the unique items found so far
   let uniqueItems = flattenedArray.filter(function (item, index, self) {
@@ -119,7 +119,7 @@ function calculatePercentages(data) {
 
   let totalUniqueItems = uniqueItems.length;
 
-  // Calculate the percentage of each subarray based on the total items
+  // Calculate percentage of each sub-array based on the total items
   return data.map(function (sublist) {
     return totalUniqueItems ? Math.round(sublist.length / totalUniqueItems * 100) : 0;
   });

@@ -7,7 +7,7 @@ function onAddToSpace(event) {
 
   collectStatisticData(event)
 
-  let message
+  let message = ''
 
   if (event.space.singleUserBotDm) {
     message = `I'm Bender, ${event.user.displayName}!`

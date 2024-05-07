@@ -1,9 +1,9 @@
 /**
  * Create a card for Google Chat.
- *
+ * 
  * @param {Object} event the event object from Google Chat
  * @param {Object} request the data from the request
- *
+ * 
  * @return {Object} the card object
  */
 function cardPoll(event, request) {

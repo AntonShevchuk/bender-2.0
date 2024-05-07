@@ -72,7 +72,7 @@ class StatisticsManager {
 
   /**
    * Collect event data and count statistics for functions and commands
-   *
+   * 
    * @param {Object} event the event object from Google Chat
    */
   collectData(event) {

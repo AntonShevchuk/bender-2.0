@@ -17,10 +17,6 @@ function onMessage(event) {
         return slashBender(event)
       case 11:
         return slashWhisky(event)
-      case 12:
-        return slashTask(event)
-      case 13:
-        return slashBug(event)
       case 20:
         return slashCard(event)
       case 21:
@@ -30,7 +26,7 @@ function onMessage(event) {
     }
   } else {
     // If the Chat app doesn't detect a slash command
-    let name
+    let name = ''
 
     if (event.space.type === 'DM') {
       name = 'You'

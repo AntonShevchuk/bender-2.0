@@ -27,15 +27,15 @@ function slashBenderStats(event) {
     "cardsV2": [{
       "cardId": "bender",
       "card":
-        {
-          "sections": [
-            {
-              "header": "Stats",
-              "collapsible": false,
-              "widgets": widgets
-            }
-          ]
-        }
+      {
+        "sections": [
+          {
+            "header": "Stats",
+            "collapsible": false,
+            "widgets": widgets
+          }
+        ]
+      }
     }]
   }
 }

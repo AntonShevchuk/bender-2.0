@@ -65,6 +65,7 @@ class FormInputHandler {
     return !!(this.isValid && this.formInputs[fieldName]);
   }
 
+  //
   // Additional methods to handle other types of inputs can be added here
   // ...
 }

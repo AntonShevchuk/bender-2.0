@@ -1,6 +1,6 @@
 /**
  * The canonical error codes for gRPC APIs.
- *
+ * 
  * @link https://developers.google.com/chat/api/reference/rest/v1/spaces.messages#code
  */
 // Not an error; returned on success.
@@ -14,18 +14,18 @@ const CODE_ALREADY_EXISTS = 'ALREADY_EXISTS'
 
 /**
  * The type of Chat app response
- *
+ * 
  * @link https://developers.google.com/chat/api/reference/rest/v1/spaces.messages#responsetype
  */
 // Default type that's handled as NEW_MESSAGE
 const RESPONSE_TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED'
 // Post as a new message in the topic
 const RESPONSE_TYPE_NEW_MESSAGE = 'NEW_MESSAGE'
-// Update the Chat app's message.
+// Update the Chat app's message. 
 // This is only permitted on a CARD_CLICKED event where the message sender type is BOT
 const RESPONSE_TYPE_UPDATE_MESSAGE = 'UPDATE_MESSAGE'
-// Update the cards on a user's message.
-// This is only permitted as a response to a MESSAGE event with a matched url, or a CARD_CLICKED event where the message sender type is HUMAN.
+// Update the cards on a user's message. 
+// This is only permitted as a response to a MESSAGE event with a matched url, or a CARD_CLICKED event where the message sender type is HUMAN. 
 // Text is ignored.
 const RESPONSE_TYPE_UPDATE_USER_MESSAGE_CARDS = 'UPDATE_USER_MESSAGE_CARDS'
 // Privately ask the user for additional authentication or configuration.

@@ -7,6 +7,8 @@ function slashBender(event) {
     switch (event.message.argumentText.trim()) {
       case "stats":
         return slashBenderStats(event)
+      case "test":
+        return slashBenderTest(event)
     }
   }
 
@@ -28,20 +30,20 @@ function slashBender(event) {
     "cardsV2": [{
       "cardId": "bender",
       "card":
-        {
-          "sections": [
-            {
-              "collapsible": false,
-              "widgets": [
-                {
-                  "textParagraph": {
-                    "text": "— " + messages[random]
-                  }
+      {
+        "sections": [
+          {
+            "collapsible": false,
+            "widgets": [
+              {
+                "textParagraph": {
+                  "text": "— " + messages[random]
                 }
-              ]
-            }
-          ]
-        }
+              }
+            ]
+          }
+        ]
+      }
     }
     ]
   }

@@ -27,9 +27,5 @@ function onCardClick(event) {
       return actionNewPoll(event)
     case 'actionVotePoll':
       return actionVotePoll(event)
-    // - /task
-    // - /bug
-    case 'actionNewIssue':
-      return actionNewIssue(event)
   }
 }
