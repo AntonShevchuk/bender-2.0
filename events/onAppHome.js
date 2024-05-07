@@ -3,10 +3,10 @@
  */
 function onAppHome() {
   return {
-    action: {
-      navigations: [
+    "action": {
+      "navigations": [
         {
-          pushCard: cardHome()
+          "pushCard": cardHome()
         }
       ]
     }

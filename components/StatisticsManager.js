@@ -8,11 +8,11 @@ class StatisticsManager {
         MESSAGE: 0,
         CARD_CLICKED: 0,
         ADDED_TO_SPACE: 0,
-        REMOVED_FROM_SPACE: 0,
+        REMOVED_FROM_SPACE: 0
       },
       commands: {},
-      functions: {},
-    }
+      functions: {}
+    };
 
     this.userStats = this.loadUserStats();
     this.scriptStats = this.loadScriptStats();
@@ -52,8 +52,8 @@ class StatisticsManager {
    * Save statistics
    */
   save() {
-    this.saveUserStats()
-    this.saveScriptStats()
+    this.saveUserStats();
+    this.saveScriptStats();
   }
 
   /**
@@ -72,32 +72,31 @@ class StatisticsManager {
 
   /**
    * Collect event data and count statistics for functions and commands
-   * 
+   *
    * @param {Object} event the event object from Google Chat
    */
   collectData(event) {
-    let userStats = this.getUserStats()
-    let scriptStats = this.getScriptStats()
+    const userStats = this.getUserStats();
+    const scriptStats = this.getScriptStats();
 
-    userStats.events[event.type]++
-    scriptStats.events[event.type]++
+    userStats.events[event.type]++;
+    scriptStats.events[event.type]++;
 
     switch (event.type) {
       case 'MESSAGE':
         if (event.message.slashCommand) {
-          let commandId = event.message.slashCommand.commandId
+          const commandId = event.message.slashCommand.commandId;
 
-          userStats.commands[commandId] = (userStats.commands[commandId] || 0) + 1
-          scriptStats.commands[commandId] = (userStats.commands[commandId] || 0) + 1
+          userStats.commands[commandId] = (userStats.commands[commandId] || 0) + 1;
+          scriptStats.commands[commandId] = (userStats.commands[commandId] || 0) + 1;
         }
         break;
       case 'CARD_CLICKED':
         if (event.common.invokedFunction) {
+          const invokedFunction = event.common.invokedFunction;
 
-          let invokedFunction = event.common.invokedFunction
-
-          userStats.functions[invokedFunction] = (userStats.functions[invokedFunction] || 0) + 1
-          scriptStats.functions[invokedFunction] = (scriptStats.functions[invokedFunction] || 0) + 1
+          userStats.functions[invokedFunction] = (userStats.functions[invokedFunction] || 0) + 1;
+          scriptStats.functions[invokedFunction] = (scriptStats.functions[invokedFunction] || 0) + 1;
         }
         break;
     }

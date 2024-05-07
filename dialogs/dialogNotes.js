@@ -7,56 +7,55 @@
  * @return {object} open a Dialog in Google Chat.
  */
 function dialogNotes(event, request = null) {
-
   return {
-    "action_response": {
-      "type": RESPONSE_TYPE_DIALOG,
-      "dialog_action": {
-        "dialog": {
-          "body": {
-            "sections": [
+    'action_response': {
+      'type': RESPONSE_TYPE_DIALOG,
+      'dialog_action': {
+        'dialog': {
+          'body': {
+            'sections': [
               {
-                "header": "Meeting Minutes",
-                "collapsible": false,
-                "widgets": [
+                'header': 'Meeting Minutes',
+                'collapsible': false,
+                'widgets': [
                   {
-                    "textInput": {
-                      "name": "announcements",
-                      "type": "MULTIPLE_LINE",
-                      "label": "📢 Announcements",
-                      "value": request ? (htmlEntities(request["announcements"]) || "") : ""
+                    'textInput': {
+                      'name': 'announcements',
+                      'type': 'MULTIPLE_LINE',
+                      'label': '📢 Announcements',
+                      'value': request ? (htmlEntities(request['announcements']) || '') : ''
                     }
                   },
                   {
-                    "textInput": {
-                      "name": "notes",
-                      "type": "MULTIPLE_LINE",
-                      "label": "📝 Notes",
-                      "value": request ? (htmlEntities(request["notes"]) || "") : ""
+                    'textInput': {
+                      'name': 'notes',
+                      'type': 'MULTIPLE_LINE',
+                      'label': '📝 Notes',
+                      'value': request ? (htmlEntities(request['notes']) || '') : ''
                     }
                   },
                   {
-                    "textInput": {
-                      "name": "actions",
-                      "type": "MULTIPLE_LINE",
-                      "label": "✅ Action Items",
-                      "value": request ? (htmlEntities(request["actions"]) || "") : ""
+                    'textInput': {
+                      'name': 'actions',
+                      'type': 'MULTIPLE_LINE',
+                      'label': '✅ Action Items',
+                      'value': request ? (htmlEntities(request['actions']) || '') : ''
                     }
                   }
                 ]
               }
             ],
-            "fixedFooter": {
-              "primaryButton": {
-                "icon": {
-                  "materialIcon": {
-                    "name": "send"
+            'fixedFooter': {
+              'primaryButton': {
+                'icon': {
+                  'materialIcon': {
+                    'name': 'send'
                   }
                 },
-                "text": "Preview",
-                "onClick": {
-                  "action": {
-                    "function": "actionPreviewNotes"
+                'text': 'Preview',
+                'onClick': {
+                  'action': {
+                    'function': 'actionPreviewNotes'
                   }
                 }
               }
@@ -65,5 +64,5 @@ function dialogNotes(event, request = null) {
         }
       }
     }
-  }
+  };
 }

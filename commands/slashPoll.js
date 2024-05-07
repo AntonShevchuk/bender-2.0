@@ -7,5 +7,5 @@
  */
 function slashPoll(event) {
   // nothing for now
-  return dialogPoll(event)
+  return dialogPoll(event);
 }

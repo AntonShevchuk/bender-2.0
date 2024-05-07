@@ -1,0 +1,30 @@
+{
+  "name": "bender-2.0",
+  "version": "7.0.0",
+  "description": "The Bender bot for Google Workspace",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonShevchuk/bender-2.0.git"
+  },
+  "keywords": [
+    "Google Workspace",
+    "Google Chat API",
+    "Apps Script"
+  ],
+  "author": "Anton Shevchuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AntonShevchuk/bender-2.0/issues"
+  },
+  "homepage": "https://github.com/AntonShevchuk/bender-2.0#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "eslint": "^9.2.0",
+    "eslint-plugin-googleappsscript": "^1.0.5",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "globals": "^15.1.0"
+  }
+}

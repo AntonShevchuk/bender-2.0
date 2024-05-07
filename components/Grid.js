@@ -42,13 +42,13 @@ class Grid {
    * @link https://developers.google.com/chat/api/reference/rest/v1/cards#imagecomponent
    */
   createImageComponent(url, altText = '', cropStyle = '') {
-    let imageComponent = {
+    const imageComponent = {
       imageUri: url,
       altText: altText
     };
 
     if (cropStyle) {
-      imageComponent.cropStyle = { type: cropStyle };
+      imageComponent.cropStyle = {type: cropStyle};
     }
 
     return imageComponent;

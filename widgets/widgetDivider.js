@@ -3,6 +3,6 @@
  */
 function widgetDivider() {
   return {
-    "divider": {}
-  }
+    'divider': {}
+  };
 }

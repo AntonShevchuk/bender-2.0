@@ -6,8 +6,7 @@
  * @return {object} open a Dialog in Google Chat.
  */
 function actionEditCard(event) {
+  const parameters = event.common.parameters;
 
-  const parameters = event.common.parameters
-
-  return dialogCard(event, parameters)
+  return dialogCard(event, parameters);
 }

@@ -7,5 +7,5 @@
  */
 function slashCard(event) {
   // nothing more
-  return dialogCard(event)
+  return dialogCard(event);
 }

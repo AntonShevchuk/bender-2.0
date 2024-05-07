@@ -4,28 +4,27 @@
  * @param {Object} event the event object from Google Chat
  */
 function onCardClick(event) {
-
-  collectStatisticData(event)
+  collectStatisticData(event);
 
   switch (event.common.invokedFunction) {
     // - /card
     case 'actionEditCard':
-      return actionEditCard(event)
+      return actionEditCard(event);
     case 'actionPreviewCard':
-      return actionPreviewCard(event)
+      return actionPreviewCard(event);
     case 'actionNewCard':
-      return actionNewCard(event)
+      return actionNewCard(event);
     // - /notes
     case 'actionEditNotes':
-      return actionEditNotes(event)
+      return actionEditNotes(event);
     case 'actionPreviewNotes':
-      return actionPreviewNotes(event)
+      return actionPreviewNotes(event);
     case 'actionNewNotes':
-      return actionNewNotes(event)
+      return actionNewNotes(event);
     // - /poll
     case 'actionNewPoll':
-      return actionNewPoll(event)
+      return actionNewPoll(event);
     case 'actionVotePoll':
-      return actionVotePoll(event)
+      return actionVotePoll(event);
   }
 }

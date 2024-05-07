@@ -29,16 +29,16 @@ class FormInputHandler {
    * Get all parameters as array of elements
    */
   getParameters() {
-    let parameters = []
+    const parameters = [];
 
-    Object.keys(this.formInputs).forEach(fieldName => {
+    Object.keys(this.formInputs).forEach((fieldName) => {
       parameters.push({
         'key': fieldName,
         'value': this.getTextValue(fieldName)
-      })
-    })
+      });
+    });
 
-    return parameters
+    return parameters;
   }
 
   /**

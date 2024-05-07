@@ -4,8 +4,8 @@
  */
 function widgetTextParagraph(text) {
   return {
-    "textParagraph": {
-      "text": `${text}`
+    'textParagraph': {
+      'text': `${text}`
     }
-  }
+  };
 }

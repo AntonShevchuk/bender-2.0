@@ -7,5 +7,5 @@
  */
 function slashNotes(event) {
   // nothing for now
-  return dialogNotes(event)
+  return dialogNotes(event);
 }

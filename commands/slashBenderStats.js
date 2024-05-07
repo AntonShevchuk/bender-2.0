@@ -2,40 +2,40 @@
  * @param {Object} event the event object from Google Chat
  */
 function slashBenderStats(event) {
-  let statisticsManager = new StatisticsManager()
-  let userStats = statisticsManager.getUserStats()
-  let scriptStats = statisticsManager.getScriptStats()
+  const statisticsManager = new StatisticsManager();
+  const userStats = statisticsManager.getUserStats();
+  const scriptStats = statisticsManager.getScriptStats();
 
-  let widgets = [
+  const widgets = [
     widgetDivider(),
-    widgetDecoratedText("<b>Scripts statistics</b>"),
-    widgetDecoratedText("Events"),
+    widgetDecoratedText('<b>Scripts statistics</b>'),
+    widgetDecoratedText('Events'),
     widgetColumnsByObject(scriptStats.events),
-    widgetDecoratedText("Commands"),
+    widgetDecoratedText('Commands'),
     widgetColumnsByObject(scriptStats.commands),
-    widgetDecoratedText("Functions"),
+    widgetDecoratedText('Functions'),
     widgetColumnsByObject(scriptStats.functions),
     widgetDivider(),
-    widgetDecoratedText("<b>User statistics</b>"),
-    widgetDecoratedText("Commands"),
+    widgetDecoratedText('<b>User statistics</b>'),
+    widgetDecoratedText('Commands'),
     widgetColumnsByObject(userStats.commands),
-    widgetDecoratedText("Functions"),
-    widgetColumnsByObject(userStats.functions),
-  ]
+    widgetDecoratedText('Functions'),
+    widgetColumnsByObject(userStats.functions)
+  ];
 
   return {
-    "cardsV2": [{
-      "cardId": "bender",
-      "card":
-      {
-        "sections": [
-          {
-            "header": "Stats",
-            "collapsible": false,
-            "widgets": widgets
-          }
-        ]
-      }
+    'cardsV2': [{
+      'cardId': 'bender',
+      'card':
+        {
+          'sections': [
+            {
+              'header': 'Stats',
+              'collapsible': false,
+              'widgets': widgets
+            }
+          ]
+        }
     }]
-  }
+  };
 }
