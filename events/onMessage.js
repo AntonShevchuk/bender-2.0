@@ -4,8 +4,6 @@
  * @param {Object} event the event object from Google Chat
  */
 function onMessage(event) {
-  collectStatisticData(event);
-
   if (event.message.slashCommand) {
     // Checks for the presence of event.message.slashCommand
     // The ID for your slash command

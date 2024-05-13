@@ -4,8 +4,6 @@
  * @param {Object} event the event object from Google Chat
  */
 function onAddToSpace(event) {
-  collectStatisticData(event);
-
   let message;
 
   if (event.space.singleUserBotDm) {

@@ -4,8 +4,6 @@
  * @param {Object} event the event object from Google Chat
  */
 function onCardClick(event) {
-  collectStatisticData(event);
-
   switch (event.common.invokedFunction) {
     // - /card
     case 'actionEditCard':

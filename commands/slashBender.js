@@ -4,10 +4,8 @@
 function slashBender(event) {
   if (event.message.argumentText && event.message.argumentText.length) {
     switch (event.message.argumentText.trim()) {
-      case 'stats':
-        return slashBenderStats(event);
-      case 'test':
-        return slashBenderTest(event);
+      case 'info':
+        return slashBenderInfo(event);
     }
   }
 
