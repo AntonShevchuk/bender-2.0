@@ -2,7 +2,9 @@
  * @param {Object} event the event object from Google Chat
  */
 function slashBender(event) {
-  if (event.message.argumentText && event.message.argumentText.length) {
+  if (event.message
+    && event.message.argumentText
+    && event.message.argumentText.length) {
     switch (event.message.argumentText.trim()) {
       case 'info':
         return slashBenderInfo(event);
