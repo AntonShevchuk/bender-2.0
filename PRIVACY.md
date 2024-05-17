@@ -1,7 +1,5 @@
 # Privacy Policy for Bender 2.0
 
-**Effective Date:** [Date]
-
 This Privacy Policy outlines the handling of information by Bender 2.0 ("the Bot"), which operates as an open-source Google bot. By using the Bot, you agree to the collection and use of information in accordance with this policy.
 
 #### 1. Information Collection and Use
