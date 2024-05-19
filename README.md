@@ -1,8 +1,8 @@
 # Bender 2.0
 
-The Bender bot for Google Chat
+Bender 2.0 is an open-source Google Chat Bot designed to enhance productivity and collaboration within chat environments. Developed with educational goals in mind, Bender 2.0 serves as a comprehensive example for those looking to build their own chat bots. The project includes detailed articles that guide users through the process of creating and deploying a Google Chat Bot.
 
-## The Series of Articles 🇺🇸
+## The Series of Articles 🇬🇧
 
 * [First Steps][1]
 * [Create a Dialog][3]
@@ -41,6 +41,10 @@ The Bender bot for Google Chat
 [13]: https://medium.com/@AntonShevchuk/google-chat-bot-integrate-jira-part-two-5141d7aeca4b
 [14]: https://anton.shevchuk.name/google/google-chat-bot-jira-integration-part-two/
 
+## License
+ 
+[MIT License](https://github.com/AntonShevchuk/bender-2.0/blob/main/LICENSE)
+
 ## Author
 
-Anton Shevchuk
+[Anton Shevchuk](https://anton.shevchuk.name/)
