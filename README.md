@@ -2,6 +2,10 @@
 
 Bender 2.0 is an open-source Google Chat Bot designed to enhance productivity and collaboration within chat environments. Developed with educational goals in mind, Bender 2.0 serves as a comprehensive example for those looking to build their own chat bots. The project includes detailed articles that guide users through the process of creating and deploying a Google Chat Bot.
 
+## Google Workspace Marketplace
+
+Bender 2.0 is available on the Google Workspace Marketplace — https://workspace.google.com/marketplace/app/bender_20/667012984956
+
 ## The Series of Articles 🇬🇧
 
 * [First Steps][1]
