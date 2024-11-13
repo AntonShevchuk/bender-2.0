@@ -14,6 +14,7 @@ Bender 2.0 is available on the Google Workspace Marketplace — https://workspac
 * [Properties Usage][7]
 * [Cards manipulation][9] 
 * JIRA Integration: [Part I][11], [Part II][13]
+* [The project structure and clasp CLI tool][15]
 
 ## Українська версія статей 🇺🇦
 
@@ -23,6 +24,7 @@ Bender 2.0 is available on the Google Workspace Marketplace — https://workspac
 * [Використання властивостей][8]
 * [Маніпуляції з картками][10]
 * Інтеграція з JIRA: [Частина I][12], [Частина II][14]
+* [Структура бота та CLI утіліта clasp][16]
 
 [1]: https://medium.com/@AntonShevchuk/google-chat-bot-first-steps-d051bc67d6b9
 [2]: https://anton.shevchuk.name/google/google-chat-bot-first-steps/
@@ -44,6 +46,9 @@ Bender 2.0 is available on the Google Workspace Marketplace — https://workspac
 
 [13]: https://medium.com/@AntonShevchuk/google-chat-bot-integrate-jira-part-two-5141d7aeca4b
 [14]: https://anton.shevchuk.name/google/google-chat-bot-jira-integration-part-two/
+
+[15]: https://medium.com/@AntonShevchuk/google-chat-bot-the-project-structure-and-clasp-cli-tool-fceb468feca0
+[16]: https://anton.shevchuk.name/google/google-chat-bot-structure-and-clasp-cli-tool/
 
 ## License
  
