@@ -40,7 +40,7 @@ function slashWhisky(event) {
   drinks.push(
     {
       "name": "Cold Brew",
-      "description": "Cold brew: for the patient ones, or those who forgot to make coffee the regular way. Steeped for hours to achieve maximum smoothness and minimal acidity. It's the coffee that takes its sweet time, unlike your rapidly approaching deadlines.",
+      "description": "For the patient ones, or those who forgot to make coffee the regular way. Steeped for hours to achieve maximum smoothness and minimal acidity. It's the coffee that takes its sweet time, unlike your rapidly approaching deadlines.",
       "image":"https://raw.githubusercontent.com/AntonShevchuk/bender-2.0/main/assets/drinks/cold-brew.jpg"
     }
   );
@@ -165,8 +165,9 @@ function slashWhisky(event) {
                 }
               },
               {
-                "decoratedText": {
-                  "text": drinks[i].description
+                "textParagraph": {
+                  "text": drinks[i].description,
+                  "maxLines": 10
                 }
               }
             ]
