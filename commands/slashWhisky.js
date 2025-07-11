@@ -146,8 +146,11 @@ function slashWhisky(event) {
               {
                 "grid": {
                   "title": "",
-                  "columnCount": 1,
+                  "columnCount": 3,
                   "items": [
+                    {
+                      "title": " "
+                    },
                     {
                       "image": {
                         "imageUri": drinks[i].image,
@@ -160,6 +163,9 @@ function slashWhisky(event) {
                       },
                       "title": drinks[i].name,
                       "textAlignment": "CENTER"
+                    },
+                    {
+                      "title": " "
                     }
                   ]
                 }
