@@ -145,7 +145,7 @@ function slashWhisky(event) {
             "widgets": [
               {
                 "grid": {
-                  "title": "",
+                  "title": " ",
                   "columnCount": 3,
                   "items": [
                     {
